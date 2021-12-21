@@ -12,14 +12,10 @@
 extern volatile unsigned char g_Delay;
 extern volatile unsigned char g_INT0;
 extern volatile unsigned char g_ButtonPressed;
-extern volatile unsigned char g_RFState;
 extern volatile unsigned int g_Timer0;
 extern volatile unsigned int g_UartTimer;
 extern volatile unsigned int g_BlinkTimer;
-extern volatile unsigned int g_RFTimer;
-extern volatile unsigned char g_RFData[];
-extern volatile unsigned char RFDataCounter;
-extern volatile unsigned char g_RFDataReady;
+
 
 volatile unsigned char g_SyncStatus = 0;
 volatile unsigned char g_OnTimeSec = 0;
@@ -52,6 +48,7 @@ ISR (TIMER0_COMPA_vect)
 	// General purpose timer value
 	// ---------------------------
 	g_Timer0++;
+	
 	
 	//Timer for blinking LED's
 	//------------------------

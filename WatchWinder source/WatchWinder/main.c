@@ -14,51 +14,69 @@
 #include "GPIO.h"
 #include "inithw.h"
 
-unsigned char gStateMachine = STATE_BOOT;
+unsigned char gStateMachine = STATE_BOOT;	//State machine variable
 
 volatile unsigned char g_Delay;
 volatile unsigned char g_INT0;
 volatile unsigned char g_ButtonPressed;
-volatile unsigned char g_RFState;
 volatile unsigned int g_Timer0;
 volatile unsigned int g_UartTimer;
 volatile unsigned int g_BlinkTimer;
-volatile unsigned int g_RFTimer;
-volatile unsigned char g_RFData[];
-volatile unsigned char RFDataCounter;
-volatile unsigned char g_RFDataReady;
 
 
-
+unsigned char g_State;
+unsigned char g_LedState;
+unsigned char g_PowerLEDState;
+unsigned char g_AmbientLEDState;
+volatile unsigned char g_RFState;
 
 int main(void)
 {
-	setup();
+	g_ButtonPressed = 0;
+	g_Timer0 = 0;
+	g_LedState = 0;
+	
 	gStateMachine = STATE_IDLE;
+	
+	setup();
+	
+	ControlPowerLED(0);
     while(1)
     {
         switch (gStateMachine)
 		{
 			case STATE_BOOT:
-			
+				g_Delay++;				
 			break;
 			
 			case STATE_IDLE:
-			
+				g_Delay++;
 			break;
 			
 			case STATE_ROTATE:
+				g_Delay++;
+			break;
+			
+			case STATE_DIMMING:
+			
+			break;
+				g_Delay++;
+			case STATE_SPEEDADJUST:
 			
 			break;
 			
 			default:
 			/*Should never enter this state*/
 			/*Add fault handling*/
-			break;
-			
-			
-			
+			break;			
 		}
 		
+		if (g_Timer0 > 5)
+		{
+			TogglePowerLED();
+			g_Timer0 = 0;
+		}
+		
+				
     }
 }
