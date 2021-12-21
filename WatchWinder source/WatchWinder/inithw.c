@@ -27,6 +27,9 @@ void setup(void)
 	
 	// External peripherals
 	// --------------------
+	
+	/*Enable Interrupts*/
+	sei();
 }
 
 void InitTimer0()
