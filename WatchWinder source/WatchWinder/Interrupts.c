@@ -9,7 +9,7 @@
 #include <avr/interrupt.h>
 #include "global.h"
 
-extern volatile unsigned char g_Delay;
+extern volatile unsigned int g_Delay;
 extern volatile unsigned char g_INT0;
 extern volatile unsigned char g_ButtonPressed;
 extern volatile unsigned int g_Timer0;

@@ -20,8 +20,8 @@ void setup(void)
 	// Internal peripherals
 	// --------------------
 	InitTimer0();		// Init timer0 for 1mS interrupts
-	InitTimer1();		// Init timer1 for PWM output 
-	InitTimer2();		// Init Timer2 for 61Hz PWM (should be 50Hz, but hey... :-) )
+	//InitTimer1();		// Init timer1 for PWM output 
+	//InitTimer2();		// Init Timer2 for 61Hz PWM (should be 50Hz, but hey... :-) )
 	InitGPIO();			// Set PORTD.2 as input and PORTB.5 as output
 	InitInt0();			// Enable falling egde interrupts
 	
@@ -49,7 +49,7 @@ void InitTimer0()
 		
 		case 8000000:
 			TCCR0A	=	(1<<WGM01);								// Configure timer in CTC mode
-			TCCR0B  =	(0<<CS00) | (1<<CS01) | (0<<CS02);		// Set timer clock source to clock/8
+			TCCR0B  =	(1<<CS00) | (1<<CS01) | (0<<CS02);		// Set timer clock source to clock/8
 			OCR0A	=	125;									// Compare register A to 125
 			TIMSK0	=	(1<<OCIE0A);							// Enable compare match A interrupt
 			sei();

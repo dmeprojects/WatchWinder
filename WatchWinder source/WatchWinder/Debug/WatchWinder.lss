@@ -3,106 +3,100 @@ WatchWinder.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  0000038d  2**0
+  0 .data         00000000  00800100  00800100  000004a3  2**0
                   ALLOC, LOAD, DATA
   1 .text         000000c8  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          0000000e  00800100  00800100  0000038d  2**0
+  2 .bss          0000000f  00800100  00800100  000004a3  2**0
                   ALLOC
-  3 .comment      0000002f  00000000  00000000  0000038d  2**0
+  3 .comment      0000002f  00000000  00000000  000004a3  2**0
                   CONTENTS, READONLY
-  4 .debug_aranges 000000d8  00000000  00000000  000003bc  2**0
+  4 .debug_aranges 000000d8  00000000  00000000  000004d2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00001487  00000000  00000000  00000494  2**0
+  5 .debug_info   00001404  00000000  00000000  000005aa  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000007c3  00000000  00000000  0000191b  2**0
+  6 .debug_abbrev 0000076b  00000000  00000000  000019ae  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   0000059e  00000000  00000000  000020de  2**0
+  7 .debug_line   00000612  00000000  00000000  00002119  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  0000016c  00000000  00000000  0000267c  2**2
+  8 .debug_frame  00000264  00000000  00000000  0000272c  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000230  00000000  00000000  000027e8  2**0
+  9 .debug_str    00000211  00000000  00000000  00002990  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000127  00000000  00000000  00002a18  2**0
+ 10 .debug_loc    0000042b  00000000  00000000  00002ba1  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000098  00000000  00000000  00002b3f  2**0
+ 11 .debug_ranges 00000098  00000000  00000000  00002fcc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .text         00000004  000002f4  000002f4  00000388  2**1
+ 12 .text         00000004  0000040a  0000040a  0000049e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00002bd8  2**2
+ 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00003064  2**2
                   CONTENTS, READONLY, DEBUGGING
- 14 .text.ControlPowerLED 0000001e  00000262  00000262  000002f6  2**1
+ 14 .text.ControlPowerLED 0000004c  000002b6  000002b6  0000034a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 15 .text.TogglePowerLED 0000000a  000002ea  000002ea  0000037e  2**1
+ 15 .text.setup   0000001e  000003ec  000003ec  00000480  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .text.InitTimer0 00000014  000002b0  000002b0  00000344  2**1
+ 16 .text.InitTimer0 0000003c  00000348  00000348  000003dc  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 17 .text.InitTimer1 0000002a  00000216  00000216  000002aa  2**1
+ 17 .text.InitInt0 00000030  000003bc  000003bc  00000450  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 18 .text.InitTimer2 00000018  00000280  00000280  00000314  2**1
+ 18 .text.InitGPIO 00000046  00000302  00000302  00000396  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 19 .text.InitInt0 00000012  000002d8  000002d8  0000036c  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 20 .text.InitGPIO 00000014  000002c4  000002c4  00000358  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 21 .text.setup   00000018  00000298  00000298  0000032c  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 22 .text.__vector_14 000000e2  000000c8  000000c8  0000015c  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 23 .text.__vector_1 00000022  00000240  00000240  000002d4  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 24 .bss.AdcTimer 00000002  0080010e  0080010e  0000038d  2**0
+ 19 .bss.g_OnTimeSec 00000001  00800113  00800113  000004a3  2**0
                   ALLOC
- 25 .bss.g_OnTimems 00000002  00800110  00800110  0000038d  2**0
+ 20 .bss.g_OnTimeMin 00000001  00800114  00800114  000004a3  2**0
                   ALLOC
- 26 .bss.g_OnTimeHr 00000001  00800112  00800112  0000038d  2**0
+ 21 .bss.g_OnTimeHr 00000001  00800115  00800115  000004a3  2**0
                   ALLOC
- 27 .bss.g_OnTimeMin 00000001  00800113  00800113  0000038d  2**0
+ 22 .bss.g_OnTimems 00000002  0080010f  0080010f  000004a3  2**0
                   ALLOC
- 28 .bss.g_OnTimeSec 00000001  00800114  00800114  0000038d  2**0
+ 23 .bss.AdcTimer 00000002  00800111  00800111  000004a3  2**0
                   ALLOC
- 29 .text.main    0000006c  000001aa  000001aa  0000023e  2**1
+ 24 .text.__vector_14 0000011e  000000c8  000000c8  0000015c  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 30 .data.gStateMachine 00000001  00800115  000002f8  0000038c  2**0
+ 25 .text.__vector_1 00000038  00000384  00000384  00000418  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .data.gStateMachine 00000001  00800116  0000040e  000004a2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
+ 27 .text.main    000000d0  000001e6  000001e6  0000027a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 3a 00 	jmp	0x74	; 0x74 <__ctors_end>
-   4:	0c 94 20 01 	jmp	0x240	; 0x240 <__vector_1>
-   8:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-   c:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  10:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  14:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  18:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  1c:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  20:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  24:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  28:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  2c:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  30:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  34:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
+   4:	0c 94 c2 01 	jmp	0x384	; 0x384 <__vector_1>
+   8:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+   c:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  10:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  14:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  18:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  1c:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  20:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  24:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  28:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  2c:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  30:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  34:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
   38:	0c 94 64 00 	jmp	0xc8	; 0xc8 <_etext>
-  3c:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  40:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  44:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  48:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  4c:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  50:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  54:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  58:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  5c:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  60:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
-  64:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__bad_interrupt>
+  3c:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  40:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  44:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  48:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  4c:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  50:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  54:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  58:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  5c:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  60:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
+  64:	0c 94 05 02 	jmp	0x40a	; 0x40a <__bad_interrupt>
 
 00000068 <.dinit>:
   68:	01 00       	.word	0x0001	; ????
-  6a:	01 15       	cp	r16, r1
+  6a:	01 16       	cp	r0, r17
   6c:	80 01       	movw	r16, r0
-  6e:	15 01       	movw	r2, r10
-  70:	16 00       	.word	0x0016	; ????
-  72:	02 f8       	bld	r0, 2
+  6e:	16 01       	movw	r2, r12
+  70:	17 00       	.word	0x0017	; ????
+  72:	04 0e       	add	r0, r20
 
 00000074 <__ctors_end>:
   74:	11 24       	eor	r1, r1
@@ -145,7 +139,7 @@ Disassembly of section .text:
   b6:	e4 37       	cpi	r30, 0x74	; 116
   b8:	f4 07       	cpc	r31, r20
   ba:	31 f7       	brne	.-52     	; 0x88 <__do_copy_data+0x8>
-  bc:	0e 94 d5 00 	call	0x1aa	; 0x1aa <main>
+  bc:	0e 94 f3 00 	call	0x1e6	; 0x1e6 <main>
   c0:	0c 94 62 00 	jmp	0xc4	; 0xc4 <_exit>
 
 000000c4 <_exit>:
@@ -156,192 +150,232 @@ Disassembly of section .text:
 
 Disassembly of section .text:
 
-000002f4 <__bad_interrupt>:
- 2f4:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+0000040a <__bad_interrupt>:
+ 40a:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
 
 Disassembly of section .text.ControlPowerLED:
 
-00000262 <ControlPowerLED>:
+000002b6 <ControlPowerLED>:
+extern unsigned char g_AmbientLEDState;
+extern volatile unsigned char g_RFState;
+
+
+void ControlPowerLED(unsigned char LedState)
+{
+ 2b6:	cf 93       	push	r28
+ 2b8:	df 93       	push	r29
+ 2ba:	1f 92       	push	r1
+ 2bc:	cd b7       	in	r28, 0x3d	; 61
+ 2be:	de b7       	in	r29, 0x3e	; 62
+ 2c0:	89 83       	std	Y+1, r24	; 0x01
+	if (LedState == ON)
+ 2c2:	89 81       	ldd	r24, Y+1	; 0x01
+ 2c4:	81 30       	cpi	r24, 0x01	; 1
+ 2c6:	69 f4       	brne	.+26     	; 0x2e2 <ControlPowerLED+0x2c>
+	{		
+		PORTB = PORTB | (1<<PowerLED);					// Turn on the led
+ 2c8:	85 e2       	ldi	r24, 0x25	; 37
+ 2ca:	90 e0       	ldi	r25, 0x00	; 0
+ 2cc:	25 e2       	ldi	r18, 0x25	; 37
+ 2ce:	30 e0       	ldi	r19, 0x00	; 0
+ 2d0:	f9 01       	movw	r30, r18
+ 2d2:	20 81       	ld	r18, Z
+ 2d4:	22 60       	ori	r18, 0x02	; 2
+ 2d6:	fc 01       	movw	r30, r24
+ 2d8:	20 83       	st	Z, r18
+		g_PowerLEDState = ON;
+ 2da:	81 e0       	ldi	r24, 0x01	; 1
+ 2dc:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <g_PowerLEDState>
+	else
+	{		
+		PORTB = PORTB & ~(1<<PowerLED);				// Turn off the led
+		g_PowerLEDState = OFF;
 	}
 }
-
-void ToggleAmbientLED (void)
-{
-	PORTB = PORTB ^ (1<<AmbientLED);	
- 262:	81 30       	cpi	r24, 0x01	; 1
- 264:	39 f4       	brne	.+14     	; 0x274 <ControlPowerLED+0x12>
- 266:	85 b1       	in	r24, 0x05	; 5
- 268:	82 60       	ori	r24, 0x02	; 2
- 26a:	85 b9       	out	0x05, r24	; 5
- 26c:	81 e0       	ldi	r24, 0x01	; 1
- 26e:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <g_PowerLEDState>
- 272:	08 95       	ret
- 274:	85 b1       	in	r24, 0x05	; 5
- 276:	8d 7f       	andi	r24, 0xFD	; 253
- 278:	85 b9       	out	0x05, r24	; 5
- 27a:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <g_PowerLEDState>
- 27e:	08 95       	ret
-
-Disassembly of section .text.TogglePowerLED:
-
-000002ea <TogglePowerLED>:
+ 2e0:	0b c0       	rjmp	.+22     	; 0x2f8 <ControlPowerLED+0x42>
+		PORTB = PORTB | (1<<PowerLED);					// Turn on the led
+		g_PowerLEDState = ON;
+	}
+	else
+	{		
+		PORTB = PORTB & ~(1<<PowerLED);				// Turn off the led
+ 2e2:	85 e2       	ldi	r24, 0x25	; 37
+ 2e4:	90 e0       	ldi	r25, 0x00	; 0
+ 2e6:	25 e2       	ldi	r18, 0x25	; 37
+ 2e8:	30 e0       	ldi	r19, 0x00	; 0
+ 2ea:	f9 01       	movw	r30, r18
+ 2ec:	20 81       	ld	r18, Z
+ 2ee:	2d 7f       	andi	r18, 0xFD	; 253
+ 2f0:	fc 01       	movw	r30, r24
+ 2f2:	20 83       	st	Z, r18
+		g_PowerLEDState = OFF;
+ 2f4:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <g_PowerLEDState>
+	}
 }
-
-void TogglePowerLED (void)
-{
-	PORTB = PORTB ^ (1<<PowerLED);
- 2ea:	95 b1       	in	r25, 0x05	; 5
- 2ec:	82 e0       	ldi	r24, 0x02	; 2
- 2ee:	89 27       	eor	r24, r25
- 2f0:	85 b9       	out	0x05, r24	; 5
- 2f2:	08 95       	ret
-
-Disassembly of section .text.InitTimer0:
-
-000002b0 <InitTimer0>:
-	
-	// Use timer0 to generate an interrupt every mS at 16Mhz
-	switch (F_CPU)
-	{
-		case 16000000:
-			TCCR0A	=	(1<<WGM01);								// Configure timer in CTC mode
- 2b0:	82 e0       	ldi	r24, 0x02	; 2
- 2b2:	84 bd       	out	0x24, r24	; 36
-			TCCR0B  =	(1<<CS00) | (1<<CS01) | (0<<CS02);		// Set timer clock source to clock/64
- 2b4:	93 e0       	ldi	r25, 0x03	; 3
- 2b6:	95 bd       	out	0x25, r25	; 37
-			OCR0A	=	250;									// Compare register A to 250
- 2b8:	9a ef       	ldi	r25, 0xFA	; 250
- 2ba:	97 bd       	out	0x27, r25	; 39
-			//OCR0A	=	32;									// Compare register A to 32
-			TIMSK0	=	(1<<OCIE0A);							// Enable compare match A interrupt
- 2bc:	80 93 6e 00 	sts	0x006E, r24	; 0x80006e <__TEXT_REGION_LENGTH__+0x7f806e>
-			sei();
- 2c0:	78 94       	sei
- 2c2:	08 95       	ret
-
-Disassembly of section .text.InitTimer1:
-
-00000216 <InitTimer1>:
-void InitTimer1()	//Configuration as PWM driver for power led
-{	
-	switch (F_CPU)
-	{
-		case 16000000:
-			TCCR1A = ( (1<<COM1A1) | (1<<COM1B1) | (1<<WGM10));	//Fast PWM mode 5, clear OC1X on compare match, set at bottom
- 216:	81 ea       	ldi	r24, 0xA1	; 161
- 218:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
-			TCCR1B = ((1<<CS12) | (0<<CS11) | (1<<CS10) |(1<<WGM12)); //Prescaler on 1024: 156.25Khz, mode 5
- 21c:	8d e0       	ldi	r24, 0x0D	; 13
- 21e:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
-			TIFR1 = (1<<OCF1A);		//Clear flag before set interrupt
- 222:	82 e0       	ldi	r24, 0x02	; 2
- 224:	86 bb       	out	0x16, r24	; 22
-			TIMSK1 = (1<<OCIE1A);	//Enable compare match interrupt
- 226:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <__TEXT_REGION_LENGTH__+0x7f806f>
-			OCR1A = 127;	//Set value in center
- 22a:	8f e7       	ldi	r24, 0x7F	; 127
- 22c:	90 e0       	ldi	r25, 0x00	; 0
- 22e:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
- 232:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
-			OCR1B = 127;	//Set value in center
- 236:	90 93 8b 00 	sts	0x008B, r25	; 0x80008b <__TEXT_REGION_LENGTH__+0x7f808b>
- 23a:	80 93 8a 00 	sts	0x008A, r24	; 0x80008a <__TEXT_REGION_LENGTH__+0x7f808a>
- 23e:	08 95       	ret
-
-Disassembly of section .text.InitTimer2:
-
-00000280 <InitTimer2>:
-}
-
-void InitTimer2() //Configuration as PWM driver for ambient LED
-{
-	// Use timer2 to generate 50Hz PWM at OC2B (fast PWm, 8-bit, TOP = 0xFF (+/-61Hz))
-	TCCR2A	=	(1<<WGM20) | (1<<WGM21) | (1<<COM2B1);	// Configure timer in PWM mode, non inverting
- 280:	83 e2       	ldi	r24, 0x23	; 35
- 282:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
-	TCCR2B  =	(1<<CS20) | (1<<CS21) | (1<<CS22);		// Set timer clock source to clock/1024 (15625Khz)
- 286:	87 e0       	ldi	r24, 0x07	; 7
- 288:	80 93 b1 00 	sts	0x00B1, r24	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7f80b1>
-	OCR2B	=	0;										// 0% duty cycle
- 28c:	10 92 b4 00 	sts	0x00B4, r1	; 0x8000b4 <__TEXT_REGION_LENGTH__+0x7f80b4>
-	DDRD	=	DDRD | (1<<3);						// Make sure PORTD.3 is set as output for the servo
- 290:	8a b1       	in	r24, 0x0a	; 10
- 292:	88 60       	ori	r24, 0x08	; 8
- 294:	8a b9       	out	0x0a, r24	; 10
- 296:	08 95       	ret
-
-Disassembly of section .text.InitInt0:
-
-000002d8 <InitInt0>:
-
-
-void InitInt0()
-{
-	//EICRA	=	(0<<ISC11) | (0<<ISC10) | (1<<ISC01) | (0<<ISC00);	// The falling edge of INT0 generates an interrupt request
-	EICRA	=	(0<<ISC11) | (0<<ISC10) | (1<<ISC01) | (0<<ISC00);	// The rising edge of INT0 generates an interrupt request
- 2d8:	82 e0       	ldi	r24, 0x02	; 2
- 2da:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <__TEXT_REGION_LENGTH__+0x7f8069>
-	EIMSK	=	(0<<INT1) | (1<<INT0);								// External Interrupt Request 0 Enable
- 2de:	81 e0       	ldi	r24, 0x01	; 1
- 2e0:	8d bb       	out	0x1d, r24	; 29
-	EIFR	=	(1<<INTF1) | (1<<INTF0);							// Clear interrupt flag to avoid false triggers
- 2e2:	83 e0       	ldi	r24, 0x03	; 3
- 2e4:	8c bb       	out	0x1c, r24	; 28
-	sei();															// Set global interrupt enable bit
- 2e6:	78 94       	sei
- 2e8:	08 95       	ret
-
-Disassembly of section .text.InitGPIO:
-
-000002c4 <InitGPIO>:
-}
-
-void InitGPIO(void)
-{
-	//Set outputs on port C
-	DDRC	=	DDRC | ((1<<MotorEnable) | (1<<MotorDirection) | (1<<MotorStep) | (1<<MotorMode1) | (1<<MotorMode2) | (1<<MotorMode2) );		
- 2c4:	87 b1       	in	r24, 0x07	; 7
- 2c6:	8f 61       	ori	r24, 0x1F	; 31
- 2c8:	87 b9       	out	0x07, r24	; 7
-	//Set input on port D
-	DDRD	=	DDRD &~(1<<PowerButton);						
- 2ca:	8a b1       	in	r24, 0x0a	; 10
- 2cc:	8f 7e       	andi	r24, 0xEF	; 239
- 2ce:	8a b9       	out	0x0a, r24	; 10
-	//Set outputs on port B
-	DDRB	=	DDRB | (1<<AmbientLED) | (1<<PowerLED);
- 2d0:	84 b1       	in	r24, 0x04	; 4
- 2d2:	83 60       	ori	r24, 0x03	; 3
- 2d4:	84 b9       	out	0x04, r24	; 4
- 2d6:	08 95       	ret
+ 2f8:	00 00       	nop
+ 2fa:	0f 90       	pop	r0
+ 2fc:	df 91       	pop	r29
+ 2fe:	cf 91       	pop	r28
+ 300:	08 95       	ret
 
 Disassembly of section .text.setup:
 
-00000298 <setup>:
+000003ec <setup>:
+//#include "I2C.h"
+#include "global.h"
+//#include "ADXL345.h"
 
 void setup(void)
 {
+ 3ec:	cf 93       	push	r28
+ 3ee:	df 93       	push	r29
+ 3f0:	cd b7       	in	r28, 0x3d	; 61
+ 3f2:	de b7       	in	r29, 0x3e	; 62
 	// Internal peripherals
 	// --------------------
 	InitTimer0();		// Init timer0 for 1mS interrupts
- 298:	0e 94 58 01 	call	0x2b0	; 0x2b0 <InitTimer0>
-	InitTimer1();		// Init timer1 for PWM output 
- 29c:	0e 94 0b 01 	call	0x216	; 0x216 <InitTimer1>
-	InitTimer2();		// Init Timer2 for 61Hz PWM (should be 50Hz, but hey... :-) )
- 2a0:	0e 94 40 01 	call	0x280	; 0x280 <InitTimer2>
+ 3f4:	0e 94 a4 01 	call	0x348	; 0x348 <InitTimer0>
+	//InitTimer1();		// Init timer1 for PWM output 
+	//InitTimer2();		// Init Timer2 for 61Hz PWM (should be 50Hz, but hey... :-) )
 	InitGPIO();			// Set PORTD.2 as input and PORTB.5 as output
- 2a4:	0e 94 62 01 	call	0x2c4	; 0x2c4 <InitGPIO>
+ 3f8:	0e 94 81 01 	call	0x302	; 0x302 <InitGPIO>
 	InitInt0();			// Enable falling egde interrupts
- 2a8:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <InitInt0>
+ 3fc:	0e 94 de 01 	call	0x3bc	; 0x3bc <InitInt0>
 	
 	// External peripherals
 	// --------------------
 	
 	/*Enable Interrupts*/
 	sei();
- 2ac:	78 94       	sei
- 2ae:	08 95       	ret
+ 400:	78 94       	sei
+}
+ 402:	00 00       	nop
+ 404:	df 91       	pop	r29
+ 406:	cf 91       	pop	r28
+ 408:	08 95       	ret
+
+Disassembly of section .text.InitTimer0:
+
+00000348 <InitTimer0>:
+	// Use timer2 to generate 50Hz PWM at OC2B (fast PWm, 8-bit, TOP = 0xFF (+/-61Hz))
+	TCCR2A	=	(1<<WGM20) | (1<<WGM21) | (1<<COM2B1);	// Configure timer in PWM mode, non inverting
+	TCCR2B  =	(1<<CS20) | (1<<CS21) | (1<<CS22);		// Set timer clock source to clock/1024 (15625Khz)
+	OCR2B	=	0;										// 0% duty cycle
+	DDRD	=	DDRD | (1<<3);						// Make sure PORTD.3 is set as output for the servo
+}
+ 348:	cf 93       	push	r28
+ 34a:	df 93       	push	r29
+ 34c:	cd b7       	in	r28, 0x3d	; 61
+ 34e:	de b7       	in	r29, 0x3e	; 62
+ 350:	84 e4       	ldi	r24, 0x44	; 68
+ 352:	90 e0       	ldi	r25, 0x00	; 0
+ 354:	22 e0       	ldi	r18, 0x02	; 2
+ 356:	fc 01       	movw	r30, r24
+ 358:	20 83       	st	Z, r18
+ 35a:	85 e4       	ldi	r24, 0x45	; 69
+ 35c:	90 e0       	ldi	r25, 0x00	; 0
+ 35e:	23 e0       	ldi	r18, 0x03	; 3
+ 360:	fc 01       	movw	r30, r24
+ 362:	20 83       	st	Z, r18
+ 364:	87 e4       	ldi	r24, 0x47	; 71
+ 366:	90 e0       	ldi	r25, 0x00	; 0
+ 368:	2d e7       	ldi	r18, 0x7D	; 125
+ 36a:	fc 01       	movw	r30, r24
+ 36c:	20 83       	st	Z, r18
+ 36e:	8e e6       	ldi	r24, 0x6E	; 110
+ 370:	90 e0       	ldi	r25, 0x00	; 0
+ 372:	22 e0       	ldi	r18, 0x02	; 2
+ 374:	fc 01       	movw	r30, r24
+ 376:	20 83       	st	Z, r18
+ 378:	78 94       	sei
+ 37a:	00 00       	nop
+ 37c:	00 00       	nop
+ 37e:	df 91       	pop	r29
+ 380:	cf 91       	pop	r28
+ 382:	08 95       	ret
+
+Disassembly of section .text.InitInt0:
+
+000003bc <InitInt0>:
+
+
+void InitInt0()
+{
+ 3bc:	cf 93       	push	r28
+ 3be:	df 93       	push	r29
+ 3c0:	cd b7       	in	r28, 0x3d	; 61
+ 3c2:	de b7       	in	r29, 0x3e	; 62
+	//EICRA	=	(0<<ISC11) | (0<<ISC10) | (1<<ISC01) | (0<<ISC00);	// The falling edge of INT0 generates an interrupt request
+	EICRA	=	(0<<ISC11) | (0<<ISC10) | (1<<ISC01) | (0<<ISC00);	// The rising edge of INT0 generates an interrupt request
+ 3c4:	89 e6       	ldi	r24, 0x69	; 105
+ 3c6:	90 e0       	ldi	r25, 0x00	; 0
+ 3c8:	22 e0       	ldi	r18, 0x02	; 2
+ 3ca:	fc 01       	movw	r30, r24
+ 3cc:	20 83       	st	Z, r18
+	EIMSK	=	(0<<INT1) | (1<<INT0);								// External Interrupt Request 0 Enable
+ 3ce:	8d e3       	ldi	r24, 0x3D	; 61
+ 3d0:	90 e0       	ldi	r25, 0x00	; 0
+ 3d2:	21 e0       	ldi	r18, 0x01	; 1
+ 3d4:	fc 01       	movw	r30, r24
+ 3d6:	20 83       	st	Z, r18
+	EIFR	=	(1<<INTF1) | (1<<INTF0);							// Clear interrupt flag to avoid false triggers
+ 3d8:	8c e3       	ldi	r24, 0x3C	; 60
+ 3da:	90 e0       	ldi	r25, 0x00	; 0
+ 3dc:	23 e0       	ldi	r18, 0x03	; 3
+ 3de:	fc 01       	movw	r30, r24
+ 3e0:	20 83       	st	Z, r18
+	sei();															// Set global interrupt enable bit
+ 3e2:	78 94       	sei
+}
+ 3e4:	00 00       	nop
+ 3e6:	df 91       	pop	r29
+ 3e8:	cf 91       	pop	r28
+ 3ea:	08 95       	ret
+
+Disassembly of section .text.InitGPIO:
+
+00000302 <InitGPIO>:
+	// Use timer2 to generate 50Hz PWM at OC2B (fast PWm, 8-bit, TOP = 0xFF (+/-61Hz))
+	TCCR2A	=	(1<<WGM20) | (1<<WGM21) | (1<<COM2B1);	// Configure timer in PWM mode, non inverting
+	TCCR2B  =	(1<<CS20) | (1<<CS21) | (1<<CS22);		// Set timer clock source to clock/1024 (15625Khz)
+	OCR2B	=	0;										// 0% duty cycle
+	DDRD	=	DDRD | (1<<3);						// Make sure PORTD.3 is set as output for the servo
+}
+ 302:	cf 93       	push	r28
+ 304:	df 93       	push	r29
+ 306:	cd b7       	in	r28, 0x3d	; 61
+ 308:	de b7       	in	r29, 0x3e	; 62
+ 30a:	87 e2       	ldi	r24, 0x27	; 39
+ 30c:	90 e0       	ldi	r25, 0x00	; 0
+ 30e:	27 e2       	ldi	r18, 0x27	; 39
+ 310:	30 e0       	ldi	r19, 0x00	; 0
+ 312:	f9 01       	movw	r30, r18
+ 314:	20 81       	ld	r18, Z
+ 316:	2f 61       	ori	r18, 0x1F	; 31
+ 318:	fc 01       	movw	r30, r24
+ 31a:	20 83       	st	Z, r18
+ 31c:	8a e2       	ldi	r24, 0x2A	; 42
+ 31e:	90 e0       	ldi	r25, 0x00	; 0
+ 320:	2a e2       	ldi	r18, 0x2A	; 42
+ 322:	30 e0       	ldi	r19, 0x00	; 0
+ 324:	f9 01       	movw	r30, r18
+ 326:	20 81       	ld	r18, Z
+ 328:	2f 7e       	andi	r18, 0xEF	; 239
+ 32a:	fc 01       	movw	r30, r24
+ 32c:	20 83       	st	Z, r18
+ 32e:	84 e2       	ldi	r24, 0x24	; 36
+ 330:	90 e0       	ldi	r25, 0x00	; 0
+ 332:	24 e2       	ldi	r18, 0x24	; 36
+ 334:	30 e0       	ldi	r19, 0x00	; 0
+ 336:	f9 01       	movw	r30, r18
+ 338:	20 81       	ld	r18, Z
+ 33a:	23 60       	ori	r18, 0x03	; 3
+ 33c:	fc 01       	movw	r30, r24
+ 33e:	20 83       	st	Z, r18
+ 340:	00 00       	nop
+ 342:	df 91       	pop	r29
+ 344:	cf 91       	pop	r28
+ 346:	08 95       	ret
 
 Disassembly of section .text.__vector_14:
 
@@ -354,230 +388,341 @@ ISR (TIMER0_COMPA_vect)
 {
   c8:	1f 92       	push	r1
   ca:	0f 92       	push	r0
-  cc:	0f b6       	in	r0, 0x3f	; 63
-  ce:	0f 92       	push	r0
-  d0:	11 24       	eor	r1, r1
-  d2:	2f 93       	push	r18
-  d4:	8f 93       	push	r24
-  d6:	9f 93       	push	r25
+  cc:	00 90 5f 00 	lds	r0, 0x005F	; 0x80005f <__TEXT_REGION_LENGTH__+0x7f805f>
+  d0:	0f 92       	push	r0
+  d2:	11 24       	eor	r1, r1
+  d4:	2f 93       	push	r18
+  d6:	3f 93       	push	r19
+  d8:	8f 93       	push	r24
+  da:	9f 93       	push	r25
+  dc:	ef 93       	push	r30
+  de:	ff 93       	push	r31
+  e0:	cf 93       	push	r28
+  e2:	df 93       	push	r29
+  e4:	cd b7       	in	r28, 0x3d	; 61
+  e6:	de b7       	in	r29, 0x3e	; 62
 	// Delay used for debouce of switch on INT0
 	// ----------------------------------------
 	if (g_INT0)
-  d8:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <g_INT0>
-  dc:	88 23       	and	r24, r24
-  de:	b9 f0       	breq	.+46     	; 0x10e <__vector_14+0x46>
+  e8:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <g_INT0>
+  ec:	88 23       	and	r24, r24
+  ee:	31 f1       	breq	.+76     	; 0x13c <__vector_14+0x74>
 	{
 		// Check if the delay has passed AND button is actually pressed down
 		if ( (++g_Delay > DELAY) & ((PIND & (1<<2)) == 0))
-  e0:	20 91 0b 01 	lds	r18, 0x010B	; 0x80010b <g_Delay>
-  e4:	2f 5f       	subi	r18, 0xFF	; 255
-  e6:	20 93 0b 01 	sts	0x010B, r18	; 0x80010b <g_Delay>
-  ea:	89 b1       	in	r24, 0x09	; 9
-  ec:	86 95       	lsr	r24
-  ee:	86 95       	lsr	r24
-  f0:	91 e0       	ldi	r25, 0x01	; 1
-  f2:	89 27       	eor	r24, r25
-  f4:	81 70       	andi	r24, 0x01	; 1
-  f6:	2b 30       	cpi	r18, 0x0B	; 11
-  f8:	08 f4       	brcc	.+2      	; 0xfc <__vector_14+0x34>
-  fa:	90 e0       	ldi	r25, 0x00	; 0
-  fc:	89 23       	and	r24, r25
-  fe:	39 f0       	breq	.+14     	; 0x10e <__vector_14+0x46>
+  f0:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <g_Delay>
+  f4:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <g_Delay+0x1>
+  f8:	01 96       	adiw	r24, 0x01	; 1
+  fa:	90 93 0c 01 	sts	0x010C, r25	; 0x80010c <g_Delay+0x1>
+  fe:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <g_Delay>
+ 102:	31 e0       	ldi	r19, 0x01	; 1
+ 104:	0b 97       	sbiw	r24, 0x0b	; 11
+ 106:	08 f4       	brcc	.+2      	; 0x10a <__vector_14+0x42>
+ 108:	30 e0       	ldi	r19, 0x00	; 0
+ 10a:	89 e2       	ldi	r24, 0x29	; 41
+ 10c:	90 e0       	ldi	r25, 0x00	; 0
+ 10e:	fc 01       	movw	r30, r24
+ 110:	80 81       	ld	r24, Z
+ 112:	88 2f       	mov	r24, r24
+ 114:	90 e0       	ldi	r25, 0x00	; 0
+ 116:	84 70       	andi	r24, 0x04	; 4
+ 118:	99 27       	eor	r25, r25
+ 11a:	21 e0       	ldi	r18, 0x01	; 1
+ 11c:	89 2b       	or	r24, r25
+ 11e:	09 f0       	breq	.+2      	; 0x122 <__vector_14+0x5a>
+ 120:	20 e0       	ldi	r18, 0x00	; 0
+ 122:	83 2f       	mov	r24, r19
+ 124:	82 23       	and	r24, r18
+ 126:	88 23       	and	r24, r24
+ 128:	49 f0       	breq	.+18     	; 0x13c <__vector_14+0x74>
 		{
 			g_ButtonPressed = 1;
- 100:	81 e0       	ldi	r24, 0x01	; 1
- 102:	80 93 0c 01 	sts	0x010C, r24	; 0x80010c <g_ButtonPressed>
+ 12a:	81 e0       	ldi	r24, 0x01	; 1
+ 12c:	80 93 0d 01 	sts	0x010D, r24	; 0x80010d <g_ButtonPressed>
 			g_Delay = 0;
- 106:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <g_Delay>
+ 130:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <g_Delay+0x1>
+ 134:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <g_Delay>
 			g_INT0 = 0;
- 10a:	10 92 05 01 	sts	0x0105, r1	; 0x800105 <g_INT0>
+ 138:	10 92 05 01 	sts	0x0105, r1	; 0x800105 <g_INT0>
 		}
 	}
 	
 	// General purpose timer value
 	// ---------------------------
 	g_Timer0++;
- 10e:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <g_Timer0>
- 112:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <g_Timer0+0x1>
- 116:	01 96       	adiw	r24, 0x01	; 1
- 118:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <g_Timer0+0x1>
- 11c:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <g_Timer0>
+ 13c:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <g_Timer0>
+ 140:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <g_Timer0+0x1>
+ 144:	01 96       	adiw	r24, 0x01	; 1
+ 146:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <g_Timer0+0x1>
+ 14a:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <g_Timer0>
 	
 	
 	//Timer for blinking LED's
 	//------------------------
 	g_BlinkTimer++;
- 120:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <g_BlinkTimer>
- 124:	90 91 07 01 	lds	r25, 0x0107	; 0x800107 <g_BlinkTimer+0x1>
- 128:	01 96       	adiw	r24, 0x01	; 1
- 12a:	90 93 07 01 	sts	0x0107, r25	; 0x800107 <g_BlinkTimer+0x1>
- 12e:	80 93 06 01 	sts	0x0106, r24	; 0x800106 <g_BlinkTimer>
+ 14e:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <g_BlinkTimer>
+ 152:	90 91 07 01 	lds	r25, 0x0107	; 0x800107 <g_BlinkTimer+0x1>
+ 156:	01 96       	adiw	r24, 0x01	; 1
+ 158:	90 93 07 01 	sts	0x0107, r25	; 0x800107 <g_BlinkTimer+0x1>
+ 15c:	80 93 06 01 	sts	0x0106, r24	; 0x800106 <g_BlinkTimer>
 	
 	// ADC timer
 	// ---------
 	AdcTimer++;	
- 132:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <_end>
- 136:	90 91 0f 01 	lds	r25, 0x010F	; 0x80010f <_end+0x1>
- 13a:	01 96       	adiw	r24, 0x01	; 1
- 13c:	90 93 0f 01 	sts	0x010F, r25	; 0x80010f <_end+0x1>
- 140:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <_end>
+ 160:	80 91 11 01 	lds	r24, 0x0111	; 0x800111 <AdcTimer>
+ 164:	90 91 12 01 	lds	r25, 0x0112	; 0x800112 <AdcTimer+0x1>
+ 168:	01 96       	adiw	r24, 0x01	; 1
+ 16a:	90 93 12 01 	sts	0x0112, r25	; 0x800112 <AdcTimer+0x1>
+ 16e:	80 93 11 01 	sts	0x0111, r24	; 0x800111 <AdcTimer>
 	
 	// Time counter (HH:MM:SS)
 	// -----------------------
 	if (++g_OnTimems == 1000)
- 144:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <g_OnTimems>
- 148:	90 91 11 01 	lds	r25, 0x0111	; 0x800111 <g_OnTimems+0x1>
- 14c:	01 96       	adiw	r24, 0x01	; 1
- 14e:	90 93 11 01 	sts	0x0111, r25	; 0x800111 <g_OnTimems+0x1>
- 152:	80 93 10 01 	sts	0x0110, r24	; 0x800110 <g_OnTimems>
- 156:	88 3e       	cpi	r24, 0xE8	; 232
- 158:	93 40       	sbci	r25, 0x03	; 3
- 15a:	f9 f4       	brne	.+62     	; 0x19a <__vector_14+0xd2>
+ 172:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <_end>
+ 176:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <_end+0x1>
+ 17a:	01 96       	adiw	r24, 0x01	; 1
+ 17c:	90 93 10 01 	sts	0x0110, r25	; 0x800110 <_end+0x1>
+ 180:	80 93 0f 01 	sts	0x010F, r24	; 0x80010f <_end>
+ 184:	88 3e       	cpi	r24, 0xE8	; 232
+ 186:	93 40       	sbci	r25, 0x03	; 3
+ 188:	f9 f4       	brne	.+62     	; 0x1c8 <__vector_14+0x100>
 	{
 		g_OnTimems = 0;
- 15c:	10 92 11 01 	sts	0x0111, r1	; 0x800111 <g_OnTimems+0x1>
- 160:	10 92 10 01 	sts	0x0110, r1	; 0x800110 <g_OnTimems>
+ 18a:	10 92 10 01 	sts	0x0110, r1	; 0x800110 <_end+0x1>
+ 18e:	10 92 0f 01 	sts	0x010F, r1	; 0x80010f <_end>
 		//g_DisplayDirty = 1;
 		if (++g_OnTimeSec == 60)
- 164:	80 91 14 01 	lds	r24, 0x0114	; 0x800114 <g_OnTimeSec>
- 168:	8f 5f       	subi	r24, 0xFF	; 255
- 16a:	80 93 14 01 	sts	0x0114, r24	; 0x800114 <g_OnTimeSec>
- 16e:	8c 33       	cpi	r24, 0x3C	; 60
- 170:	a1 f4       	brne	.+40     	; 0x19a <__vector_14+0xd2>
+ 192:	80 91 13 01 	lds	r24, 0x0113	; 0x800113 <g_OnTimeSec>
+ 196:	8f 5f       	subi	r24, 0xFF	; 255
+ 198:	80 93 13 01 	sts	0x0113, r24	; 0x800113 <g_OnTimeSec>
+ 19c:	8c 33       	cpi	r24, 0x3C	; 60
+ 19e:	a1 f4       	brne	.+40     	; 0x1c8 <__vector_14+0x100>
 		{		
 			g_OnTimeSec = 0;
- 172:	10 92 14 01 	sts	0x0114, r1	; 0x800114 <g_OnTimeSec>
+ 1a0:	10 92 13 01 	sts	0x0113, r1	; 0x800113 <g_OnTimeSec>
 			if (++g_OnTimeMin == 60)
- 176:	80 91 13 01 	lds	r24, 0x0113	; 0x800113 <g_OnTimeMin>
- 17a:	8f 5f       	subi	r24, 0xFF	; 255
- 17c:	80 93 13 01 	sts	0x0113, r24	; 0x800113 <g_OnTimeMin>
- 180:	8c 33       	cpi	r24, 0x3C	; 60
- 182:	59 f4       	brne	.+22     	; 0x19a <__vector_14+0xd2>
+ 1a4:	80 91 14 01 	lds	r24, 0x0114	; 0x800114 <g_OnTimeMin>
+ 1a8:	8f 5f       	subi	r24, 0xFF	; 255
+ 1aa:	80 93 14 01 	sts	0x0114, r24	; 0x800114 <g_OnTimeMin>
+ 1ae:	8c 33       	cpi	r24, 0x3C	; 60
+ 1b0:	59 f4       	brne	.+22     	; 0x1c8 <__vector_14+0x100>
 			{
 				g_OnTimeMin = 0;
- 184:	10 92 13 01 	sts	0x0113, r1	; 0x800113 <g_OnTimeMin>
+ 1b2:	10 92 14 01 	sts	0x0114, r1	; 0x800114 <g_OnTimeMin>
 				if (++g_OnTimeHr == 25)
- 188:	80 91 12 01 	lds	r24, 0x0112	; 0x800112 <g_OnTimeHr>
- 18c:	8f 5f       	subi	r24, 0xFF	; 255
- 18e:	80 93 12 01 	sts	0x0112, r24	; 0x800112 <g_OnTimeHr>
- 192:	89 31       	cpi	r24, 0x19	; 25
- 194:	11 f4       	brne	.+4      	; 0x19a <__vector_14+0xd2>
+ 1b6:	80 91 15 01 	lds	r24, 0x0115	; 0x800115 <g_OnTimeHr>
+ 1ba:	8f 5f       	subi	r24, 0xFF	; 255
+ 1bc:	80 93 15 01 	sts	0x0115, r24	; 0x800115 <g_OnTimeHr>
+ 1c0:	89 31       	cpi	r24, 0x19	; 25
+ 1c2:	11 f4       	brne	.+4      	; 0x1c8 <__vector_14+0x100>
 				{
 					g_OnTimeHr = 0;
- 196:	10 92 12 01 	sts	0x0112, r1	; 0x800112 <g_OnTimeHr>
+ 1c4:	10 92 15 01 	sts	0x0115, r1	; 0x800115 <g_OnTimeHr>
 				}
 			}
 		}
 	}
 }
- 19a:	9f 91       	pop	r25
- 19c:	8f 91       	pop	r24
- 19e:	2f 91       	pop	r18
- 1a0:	0f 90       	pop	r0
- 1a2:	0f be       	out	0x3f, r0	; 63
- 1a4:	0f 90       	pop	r0
- 1a6:	1f 90       	pop	r1
- 1a8:	18 95       	reti
+ 1c8:	00 00       	nop
+ 1ca:	df 91       	pop	r29
+ 1cc:	cf 91       	pop	r28
+ 1ce:	ff 91       	pop	r31
+ 1d0:	ef 91       	pop	r30
+ 1d2:	9f 91       	pop	r25
+ 1d4:	8f 91       	pop	r24
+ 1d6:	3f 91       	pop	r19
+ 1d8:	2f 91       	pop	r18
+ 1da:	0f 90       	pop	r0
+ 1dc:	00 92 5f 00 	sts	0x005F, r0	; 0x80005f <__TEXT_REGION_LENGTH__+0x7f805f>
+ 1e0:	0f 90       	pop	r0
+ 1e2:	1f 90       	pop	r1
+ 1e4:	18 95       	reti
 
 Disassembly of section .text.__vector_1:
 
-00000240 <__vector_1>:
+00000384 <__vector_1>:
 
 // Interrupt triggers on button pressed (PORTD.2, Arduino port 2)
 // --------------------------------------------------------------
 ISR (INT0_vect)
 {
- 240:	1f 92       	push	r1
- 242:	0f 92       	push	r0
- 244:	0f b6       	in	r0, 0x3f	; 63
- 246:	0f 92       	push	r0
- 248:	11 24       	eor	r1, r1
- 24a:	8f 93       	push	r24
+ 384:	1f 92       	push	r1
+ 386:	0f 92       	push	r0
+ 388:	00 90 5f 00 	lds	r0, 0x005F	; 0x80005f <__TEXT_REGION_LENGTH__+0x7f805f>
+ 38c:	0f 92       	push	r0
+ 38e:	11 24       	eor	r1, r1
+ 390:	8f 93       	push	r24
+ 392:	cf 93       	push	r28
+ 394:	df 93       	push	r29
+ 396:	cd b7       	in	r28, 0x3d	; 61
+ 398:	de b7       	in	r29, 0x3e	; 62
 	g_INT0 = 1;
- 24c:	81 e0       	ldi	r24, 0x01	; 1
- 24e:	80 93 05 01 	sts	0x0105, r24	; 0x800105 <g_INT0>
+ 39a:	81 e0       	ldi	r24, 0x01	; 1
+ 39c:	80 93 05 01 	sts	0x0105, r24	; 0x800105 <g_INT0>
 	g_Delay = 0;
- 252:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <g_Delay>
+ 3a0:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <g_Delay+0x1>
+ 3a4:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <g_Delay>
 }
- 256:	8f 91       	pop	r24
- 258:	0f 90       	pop	r0
- 25a:	0f be       	out	0x3f, r0	; 63
- 25c:	0f 90       	pop	r0
- 25e:	1f 90       	pop	r1
- 260:	18 95       	reti
+ 3a8:	00 00       	nop
+ 3aa:	df 91       	pop	r29
+ 3ac:	cf 91       	pop	r28
+ 3ae:	8f 91       	pop	r24
+ 3b0:	0f 90       	pop	r0
+ 3b2:	00 92 5f 00 	sts	0x005F, r0	; 0x80005f <__TEXT_REGION_LENGTH__+0x7f805f>
+ 3b6:	0f 90       	pop	r0
+ 3b8:	1f 90       	pop	r1
+ 3ba:	18 95       	reti
 
 Disassembly of section .text.main:
 
-000001aa <main>:
+000001e6 <main>:
+unsigned char g_PowerLEDState;
 unsigned char g_AmbientLEDState;
 volatile unsigned char g_RFState;
 
 int main(void)
 {
+ 1e6:	cf 93       	push	r28
+ 1e8:	df 93       	push	r29
+ 1ea:	cd b7       	in	r28, 0x3d	; 61
+ 1ec:	de b7       	in	r29, 0x3e	; 62
 	g_ButtonPressed = 0;
- 1aa:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <g_ButtonPressed>
+ 1ee:	10 92 0d 01 	sts	0x010D, r1	; 0x80010d <g_ButtonPressed>
 	g_Timer0 = 0;
- 1ae:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <g_Timer0+0x1>
- 1b2:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <g_Timer0>
+ 1f2:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <g_Timer0+0x1>
+ 1f6:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <g_Timer0>
 	g_LedState = 0;
- 1b6:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <g_LedState>
+ 1fa:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <g_LedState>
 	
 	gStateMachine = STATE_IDLE;
- 1ba:	82 e0       	ldi	r24, 0x02	; 2
- 1bc:	80 93 15 01 	sts	0x0115, r24	; 0x800115 <gStateMachine>
+ 1fe:	82 e0       	ldi	r24, 0x02	; 2
+ 200:	80 93 16 01 	sts	0x0116, r24	; 0x800116 <gStateMachine>
 	
 	setup();
- 1c0:	0e 94 4c 01 	call	0x298	; 0x298 <setup>
-	
-	ControlPowerLED(0);
- 1c4:	80 e0       	ldi	r24, 0x00	; 0
- 1c6:	0e 94 31 01 	call	0x262	; 0x262 <ControlPowerLED>
+ 204:	0e 94 f6 01 	call	0x3ec	; 0x3ec <setup>
+		
     while(1)
     {
         switch (gStateMachine)
- 1ca:	80 91 15 01 	lds	r24, 0x0115	; 0x800115 <gStateMachine>
- 1ce:	82 30       	cpi	r24, 0x02	; 2
- 1d0:	51 f0       	breq	.+20     	; 0x1e6 <main+0x3c>
- 1d2:	83 30       	cpi	r24, 0x03	; 3
- 1d4:	71 f0       	breq	.+28     	; 0x1f2 <main+0x48>
- 1d6:	81 30       	cpi	r24, 0x01	; 1
- 1d8:	89 f4       	brne	.+34     	; 0x1fc <main+0x52>
+ 208:	80 91 16 01 	lds	r24, 0x0116	; 0x800116 <gStateMachine>
+ 20c:	88 2f       	mov	r24, r24
+ 20e:	90 e0       	ldi	r25, 0x00	; 0
+ 210:	83 30       	cpi	r24, 0x03	; 3
+ 212:	91 05       	cpc	r25, r1
+ 214:	59 f1       	breq	.+86     	; 0x26c <main+0x86>
+ 216:	84 30       	cpi	r24, 0x04	; 4
+ 218:	91 05       	cpc	r25, r1
+ 21a:	34 f4       	brge	.+12     	; 0x228 <main+0x42>
+ 21c:	81 30       	cpi	r24, 0x01	; 1
+ 21e:	91 05       	cpc	r25, r1
+ 220:	49 f0       	breq	.+18     	; 0x234 <main+0x4e>
+ 222:	02 97       	sbiw	r24, 0x02	; 2
+ 224:	89 f0       	breq	.+34     	; 0x248 <main+0x62>
+			break;
+			
+			default:
+			/*Should never enter this state*/
+			/*Add fault handling*/
+			break;			
+ 226:	2f c0       	rjmp	.+94     	; 0x286 <main+0xa0>
+	
+	setup();
+		
+    while(1)
+    {
+        switch (gStateMachine)
+ 228:	84 30       	cpi	r24, 0x04	; 4
+ 22a:	91 05       	cpc	r25, r1
+ 22c:	49 f1       	breq	.+82     	; 0x280 <main+0x9a>
+ 22e:	05 97       	sbiw	r24, 0x05	; 5
+ 230:	49 f1       	breq	.+82     	; 0x284 <main+0x9e>
+			break;
+			
+			default:
+			/*Should never enter this state*/
+			/*Add fault handling*/
+			break;			
+ 232:	29 c0       	rjmp	.+82     	; 0x286 <main+0xa0>
+    while(1)
+    {
+        switch (gStateMachine)
 		{
 			case STATE_BOOT:
 				g_Delay++;				
- 1da:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <g_Delay>
- 1de:	8f 5f       	subi	r24, 0xFF	; 255
- 1e0:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <g_Delay>
+ 234:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <g_Delay>
+ 238:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <g_Delay+0x1>
+ 23c:	01 96       	adiw	r24, 0x01	; 1
+ 23e:	90 93 0c 01 	sts	0x010C, r25	; 0x80010c <g_Delay+0x1>
+ 242:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <g_Delay>
 			break;
- 1e4:	0b c0       	rjmp	.+22     	; 0x1fc <main+0x52>
+ 246:	1f c0       	rjmp	.+62     	; 0x286 <main+0xa0>
 			
 			case STATE_IDLE:
+				ControlPowerLED(OFF);
+ 248:	80 e0       	ldi	r24, 0x00	; 0
+ 24a:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <ControlPowerLED>
 				g_Delay++;
- 1e6:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <g_Delay>
- 1ea:	8f 5f       	subi	r24, 0xFF	; 255
- 1ec:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <g_Delay>
+ 24e:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <g_Delay>
+ 252:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <g_Delay+0x1>
+ 256:	01 96       	adiw	r24, 0x01	; 1
+ 258:	90 93 0c 01 	sts	0x010C, r25	; 0x80010c <g_Delay+0x1>
+ 25c:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <g_Delay>
+				gStateMachine++;
+ 260:	80 91 16 01 	lds	r24, 0x0116	; 0x800116 <gStateMachine>
+ 264:	8f 5f       	subi	r24, 0xFF	; 255
+ 266:	80 93 16 01 	sts	0x0116, r24	; 0x800116 <gStateMachine>
 			break;
- 1f0:	05 c0       	rjmp	.+10     	; 0x1fc <main+0x52>
+ 26a:	0d c0       	rjmp	.+26     	; 0x286 <main+0xa0>
 			
 			case STATE_ROTATE:
 				g_Delay++;
- 1f2:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <g_Delay>
- 1f6:	8f 5f       	subi	r24, 0xFF	; 255
- 1f8:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <g_Delay>
+ 26c:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <g_Delay>
+ 270:	90 91 0c 01 	lds	r25, 0x010C	; 0x80010c <g_Delay+0x1>
+ 274:	01 96       	adiw	r24, 0x01	; 1
+ 276:	90 93 0c 01 	sts	0x010C, r25	; 0x80010c <g_Delay+0x1>
+ 27a:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <g_Delay>
+			break;
+ 27e:	03 c0       	rjmp	.+6      	; 0x286 <main+0xa0>
+			
+			case STATE_DIMMING:
+			
+			break;
+ 280:	00 00       	nop
+ 282:	01 c0       	rjmp	.+2      	; 0x286 <main+0xa0>
+				g_Delay++;
+			case STATE_SPEEDADJUST:
+			
+			break;
+ 284:	00 00       	nop
 			/*Should never enter this state*/
 			/*Add fault handling*/
 			break;			
 		}
 		
-		if (g_Timer0 > 5)
- 1fc:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <g_Timer0>
- 200:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <g_Timer0+0x1>
- 204:	06 97       	sbiw	r24, 0x06	; 6
- 206:	08 f3       	brcs	.-62     	; 0x1ca <main+0x20>
+		if (g_Timer0 == 5)
+ 286:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <g_Timer0>
+ 28a:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <g_Timer0+0x1>
+ 28e:	05 97       	sbiw	r24, 0x05	; 5
+ 290:	19 f4       	brne	.+6      	; 0x298 <main+0xb2>
 		{
-			TogglePowerLED();
- 208:	0e 94 75 01 	call	0x2ea	; 0x2ea <TogglePowerLED>
+			ControlPowerLED(ON);
+ 292:	81 e0       	ldi	r24, 0x01	; 1
+ 294:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <ControlPowerLED>
+		}
+		
+		if (g_Timer0 > 10)
+ 298:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <g_Timer0>
+ 29c:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <g_Timer0+0x1>
+ 2a0:	0b 97       	sbiw	r24, 0x0b	; 11
+ 2a2:	08 f4       	brcc	.+2      	; 0x2a6 <main+0xc0>
+ 2a4:	b1 cf       	rjmp	.-158    	; 0x208 <main+0x22>
+		{
+			ControlPowerLED(OFF);
+ 2a6:	80 e0       	ldi	r24, 0x00	; 0
+ 2a8:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <ControlPowerLED>
 			g_Timer0 = 0;
- 20c:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <g_Timer0+0x1>
- 210:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <g_Timer0>
- 214:	da cf       	rjmp	.-76     	; 0x1ca <main+0x20>
+ 2ac:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <g_Timer0+0x1>
+ 2b0:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <g_Timer0>
+		}
+	}
+ 2b4:	a9 cf       	rjmp	.-174    	; 0x208 <main+0x22>

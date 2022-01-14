@@ -16,7 +16,7 @@
 
 unsigned char gStateMachine = STATE_BOOT;	//State machine variable
 
-volatile unsigned char g_Delay;
+volatile unsigned int g_Delay;
 volatile unsigned char g_INT0;
 volatile unsigned char g_ButtonPressed;
 volatile unsigned int g_Timer0;
@@ -39,8 +39,7 @@ int main(void)
 	gStateMachine = STATE_IDLE;
 	
 	setup();
-	
-	ControlPowerLED(0);
+		
     while(1)
     {
         switch (gStateMachine)
@@ -50,7 +49,9 @@ int main(void)
 			break;
 			
 			case STATE_IDLE:
+				ControlPowerLED(OFF);
 				g_Delay++;
+				gStateMachine++;
 			break;
 			
 			case STATE_ROTATE:
@@ -71,12 +72,15 @@ int main(void)
 			break;			
 		}
 		
-		if (g_Timer0 > 5)
+		if (g_Timer0 == 5)
 		{
-			TogglePowerLED();
-			g_Timer0 = 0;
+			ControlPowerLED(ON);
 		}
 		
-				
-    }
+		if (g_Timer0 > 10)
+		{
+			ControlPowerLED(OFF);
+			g_Timer0 = 0;
+		}
+	}
 }
