@@ -22,6 +22,8 @@ volatile unsigned char g_ButtonPressed;
 volatile unsigned int g_Timer0;
 volatile unsigned int g_UartTimer;
 volatile unsigned int g_BlinkTimer;
+volatile unsigned int g_MotorTimer;
+volatile unsigned int g_MotorPulseTimer;
 
 
 unsigned char g_State;
@@ -50,18 +52,31 @@ int main(void)
 			
 			case STATE_IDLE:
 				ControlPowerLED(OFF);
+				ControlMotorEnable(ON);
 				g_Delay++;
 				gStateMachine++;
 			break;
 			
 			case STATE_ROTATE:
 				g_Delay++;
+				/*Increment motor pulses*/
+				
+				if (g_MotorTimer == 2)
+				{
+					PINC = (1<< MotorStep);
+				}
+				
+				if (g_MotorTimer > 2)
+				{
+					PINC = (1<< MotorStep);
+					g_MotorTimer = 0;
+				}
 			break;
 			
 			case STATE_DIMMING:
 			
 			break;
-				g_Delay++;
+
 			case STATE_SPEEDADJUST:
 			
 			break;
@@ -72,12 +87,14 @@ int main(void)
 			break;			
 		}
 		
-		if (g_Timer0 == 5)
+		if (g_Timer0 == 100)
 		{
-			ControlPowerLED(ON);
+			//ControlPowerLED(ON);
+			TogglePowerLED();
+			g_Timer0 = 0;
 		}
 		
-		if (g_Timer0 > 10)
+		if (g_Timer0 > 200)
 		{
 			ControlPowerLED(OFF);
 			g_Timer0 = 0;

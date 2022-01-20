@@ -50,23 +50,23 @@ void ControlMotorEnable (unsigned char MotorState)
 {
 	if (MotorState == ON)
 	{
-		PORTD = PORTD | (1<<MotorState);
+		PORTC |=  (1<<MotorEnable);
 	}
 	
 	if (MotorState == OFF)
 	{
-		PORTD = PORTD & !(1<<MotorState);
+		PORTC &= ~(1<<MotorEnable);
 	}
 }
 
 void ToggleAmbientLED (void)
 {
-	PORTB = PORTB ^ (1<<AmbientLED);	
+	PINB |= (1<<AmbientLED);	
 }
 
 void TogglePowerLED (void)
 {
-	PORTB = PORTB ^ (1<<PowerLED);
+	PINB |= (1<<PowerLED);
 }
 
 unsigned char StatusPowerButton (void)

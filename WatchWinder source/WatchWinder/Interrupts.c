@@ -16,6 +16,9 @@ extern volatile unsigned int g_Timer0;
 extern volatile unsigned int g_UartTimer;
 extern volatile unsigned int g_BlinkTimer;
 
+extern volatile unsigned int g_MotorTimer;
+extern volatile unsigned int g_MotorPulseTimer;
+
 
 volatile unsigned char g_SyncStatus = 0;
 volatile unsigned char g_OnTimeSec = 0;
@@ -26,7 +29,7 @@ volatile unsigned char g_ZeroCounter = 0;
 volatile unsigned char g_DataSync = 0;
 
 volatile unsigned int g_OnTimems = 0;
-volatile unsigned int AdcTimer = 0;
+volatile unsigned int MotorTimer = 0;
 
 // Interrupt triggers every 1mS
 // ----------------------------
@@ -49,6 +52,9 @@ ISR (TIMER0_COMPA_vect)
 	// ---------------------------
 	g_Timer0++;
 	
+	g_MotorPulseTimer++;
+	g_MotorTimer++;
+	
 	
 	//Timer for blinking LED's
 	//------------------------
@@ -56,7 +62,7 @@ ISR (TIMER0_COMPA_vect)
 	
 	// ADC timer
 	// ---------
-	AdcTimer++;	
+	MotorTimer++;	
 	
 	// Time counter (HH:MM:SS)
 	// -----------------------

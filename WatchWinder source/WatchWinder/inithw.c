@@ -25,6 +25,15 @@ void setup(void)
 	InitGPIO();			// Set PORTD.2 as input and PORTB.5 as output
 	InitInt0();			// Enable falling egde interrupts
 	
+	/*Set step mode*/
+	PORTC &= ~(1 << MotorMode0) | ~(1 << MotorMode1)| ~(1 << MotorMode2);	//Full step
+	//PORTC = PORTC & (1 << MotorMode0) | ~(1 << MotorMode1)| ~(1 << MotorMode2);	//1/2 step
+	//PORTC = PORTC & ~(1 << MotorMode0) | (1 << MotorMode1)| ~(1 << MotorMode2);	//1/4 step
+	
+	PORTC |= (1 << MotorMode2);	//1/16th stepp
+	PORTC |= (1 << MotorMode2)| (1 << MotorMode0);	//1/16th stepp
+	
+	
 	// External peripherals
 	// --------------------
 	
@@ -44,7 +53,7 @@ void InitTimer0()
 			OCR0A	=	250;									// Compare register A to 250
 			//OCR0A	=	32;									// Compare register A to 32
 			TIMSK0	=	(1<<OCIE0A);							// Enable compare match A interrupt
-			sei();
+			//sei();
 		break;
 		
 		case 8000000:
@@ -52,7 +61,7 @@ void InitTimer0()
 			TCCR0B  =	(1<<CS00) | (1<<CS01) | (0<<CS02);		// Set timer clock source to clock/8
 			OCR0A	=	125;									// Compare register A to 125
 			TIMSK0	=	(1<<OCIE0A);							// Enable compare match A interrupt
-			sei();
+			//sei();
 		break;
 	}
 }
@@ -96,7 +105,7 @@ void InitInt0()
 	EICRA	=	(0<<ISC11) | (0<<ISC10) | (1<<ISC01) | (0<<ISC00);	// The rising edge of INT0 generates an interrupt request
 	EIMSK	=	(0<<INT1) | (1<<INT0);								// External Interrupt Request 0 Enable
 	EIFR	=	(1<<INTF1) | (1<<INTF0);							// Clear interrupt flag to avoid false triggers
-	sei();															// Set global interrupt enable bit
+	//sei();															// Set global interrupt enable bit
 }
 
 void InitGPIO(void)

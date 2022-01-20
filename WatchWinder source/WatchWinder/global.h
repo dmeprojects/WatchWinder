@@ -36,9 +36,9 @@ External components
 #define MotorEnable		0
 #define MotorDirection	1
 #define MotorStep		2
-#define MotorMode1		3
-#define MotorMode2		4
-#define MotorMode3		5
+#define MotorMode0		3
+#define MotorMode1		4
+#define MotorMode2		5
 
 
 // State defines of statemachine
