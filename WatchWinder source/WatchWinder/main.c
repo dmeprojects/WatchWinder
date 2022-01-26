@@ -47,10 +47,15 @@ int main(void)
         switch (gStateMachine)
 		{
 			case STATE_BOOT:
-				g_Delay++;				
+			
 			break;
 			
 			case STATE_IDLE:
+			/*System idle state
+			motor disabled
+			ambient light off
+			power led breathing			
+			*/
 				ControlPowerLED(OFF);
 				ControlMotorEnable(ON);
 				g_Delay++;
@@ -60,13 +65,14 @@ int main(void)
 			case STATE_ROTATE:
 				g_Delay++;
 				/*Increment motor pulses*/
+				g_MotorPulseTimer++;
 				
-				if (g_MotorTimer == 2)
+				if (g_MotorTimer == 3)
 				{
-					PINC = (1<< MotorStep);
+					PINC = (1<< MotorStep);	
 				}
 				
-				if (g_MotorTimer > 2)
+				if (g_MotorTimer > 4)
 				{
 					PINC = (1<< MotorStep);
 					g_MotorTimer = 0;

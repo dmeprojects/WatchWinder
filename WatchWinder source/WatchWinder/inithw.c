@@ -31,7 +31,7 @@ void setup(void)
 	//PORTC = PORTC & ~(1 << MotorMode0) | (1 << MotorMode1)| ~(1 << MotorMode2);	//1/4 step
 	
 	PORTC |= (1 << MotorMode2);	//1/16th stepp
-	PORTC |= (1 << MotorMode2)| (1 << MotorMode0);	//1/16th stepp
+	PORTC |= (1 << MotorMode2) | (1 << MotorMode0);	//1/16th stepp
 	
 	
 	// External peripherals
