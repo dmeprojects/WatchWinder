@@ -28,6 +28,7 @@ External components
 //LED outputs on Port B
 #define AmbientLED	0	
 #define PowerLED	1
+#define MotorStep	3	//Connected to OC2A
 
 //Button input on port D	
 #define PowerButton	4	
@@ -35,7 +36,7 @@ External components
 //Motor controller signals on port C
 #define MotorEnable		0
 #define MotorDirection	1
-#define MotorStep		2
+//#define MotorStep		2
 #define MotorMode0		3
 #define MotorMode1		4
 #define MotorMode2		5
@@ -58,5 +59,7 @@ External components
 #define FALSE			0
 #define OK				1
 #define ERROR			0
+#define FORWARD			1
+#define BACKWARD		0
 
 #endif /* GLOBAL_H_ */

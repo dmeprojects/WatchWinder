@@ -14,7 +14,7 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
- .././main.h .././global.h .././GPIO.h .././inithw.h
+ .././main.h .././global.h .././GPIO.h .././inithw.h .././Timers.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -53,3 +53,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 .././GPIO.h:
 
 .././inithw.h:
+
+.././Timers.h:

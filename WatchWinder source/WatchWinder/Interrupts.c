@@ -93,6 +93,15 @@ ISR (INT0_vect)
 	g_Delay = 0;
 }
 
+/*
+Interrupt triggers 
+*/
+ISR (TIMER2_COMPA_vect)
+{	
+	//Change OCR2A value
+	g_MotorTimer++;	
+}
+
 
 
 

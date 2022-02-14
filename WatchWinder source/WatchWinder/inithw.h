@@ -10,11 +10,10 @@
 #define INITHW_H_
 
 void setup(void);
-void InitTimer0(void);
+
 void InitInt0(void);
 void InitGPIO(void);
 void InitI2C(void);
-void InitTimer2(void);
-void InitTimer1(void);
+
 
 #endif /* INITHW_H_ */

@@ -40,7 +40,8 @@ C_SRCS +=  \
 ../GPIO.c \
 ../inithw.c \
 ../Interrupts.c \
-../main.c
+../main.c \
+../Timers.c
 
 
 PREPROCESSING_SRCS += 
@@ -53,25 +54,29 @@ OBJS +=  \
 GPIO.o \
 inithw.o \
 Interrupts.o \
-main.o
+main.o \
+Timers.o
 
 OBJS_AS_ARGS +=  \
 GPIO.o \
 inithw.o \
 Interrupts.o \
-main.o
+main.o \
+Timers.o
 
 C_DEPS +=  \
 GPIO.d \
 inithw.d \
 Interrupts.d \
-main.d
+main.d \
+Timers.d
 
 C_DEPS_AS_ARGS +=  \
 GPIO.d \
 inithw.d \
 Interrupts.d \
-main.d
+main.d \
+Timers.d
 
 OUTPUT_FILE_PATH +=WatchWinder.elf
 
@@ -109,6 +114,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega328P  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega328P__ -DDEBUG  -O0 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./Timers.o: .././Timers.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega328P  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega328P__ -DDEBUG  -O0 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

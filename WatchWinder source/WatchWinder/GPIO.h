@@ -19,6 +19,8 @@ unsigned char StatusPowerButton (void);
 void ControlMotorStep (unsigned char StepSTate);
 void ControlMotorEnable (unsigned char MotorState);
 void ToggleMotorStep (void);
+void ControlMotorDirection (unsigned char Direction);
+void ToggleMotorDirection (void);
 
 
 

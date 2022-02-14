@@ -59,6 +59,23 @@ void ControlMotorEnable (unsigned char MotorState)
 	}
 }
 
+void ControlMotorDirection (unsigned char Direction)
+{
+	if (Direction == FORWARD)
+	{
+		PORTC |= (1<< MotorDirection);
+	}
+	else
+	{
+		PORTC &= ~(1<<MotorDirection);
+	}
+}
+
+void ToggleMotorDirection (void)
+{
+	PINC |= (1<<MotorDirection);
+}
+
 void ToggleAmbientLED (void)
 {
 	PINB |= (1<<AmbientLED);	

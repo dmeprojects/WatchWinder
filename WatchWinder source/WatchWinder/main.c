@@ -13,6 +13,7 @@
 #include "global.h"
 #include "GPIO.h"
 #include "inithw.h"
+#include "Timers.h"
 
 unsigned char gStateMachine = STATE_BOOT;	//State machine variable
 
@@ -31,6 +32,8 @@ unsigned char g_LedState;
 unsigned char g_PowerLEDState;
 unsigned char g_AmbientLEDState;
 volatile unsigned char g_RFState;
+int g_MotorPulses;
+int g_MotorPosition;
 
 int main(void)
 {
@@ -47,6 +50,10 @@ int main(void)
         switch (gStateMachine)
 		{
 			case STATE_BOOT:
+			ControlPowerLED(OFF);
+			ControlMotorEnable(OFF);
+			ControlAmbientLED(OFF);
+			gStateMachine++;			
 			
 			break;
 			
@@ -56,27 +63,67 @@ int main(void)
 			ambient light off
 			power led breathing			
 			*/
-				ControlPowerLED(OFF);
+			
+			if (g_ButtonPressed)
+			{
+				g_ButtonPressed = 0;
+				ControlPowerLED(ON);
 				ControlMotorEnable(ON);
-				g_Delay++;
+				g_MotorPulses = 0;
+				g_MotorPosition = 1000;
 				gStateMachine++;
+			}
+
 			break;
 			
 			case STATE_ROTATE:
-				g_Delay++;
+			PINC = (1<< MotorStep);	
 				/*Increment motor pulses*/
+				if (g_MotorPulses == g_MotorPosition)	//Change direction
+				{
+					ToggleMotorDirection();					
+					if (g_MotorPosition < 0)
+					{
+						g_MotorPosition = 1000;
+					}
+					else
+					{
+						g_MotorPosition = -1000;
+					}
+				}
+				
+				/*Check if value must be in or decremented*/
+				if (g_MotorPulses > g_MotorPosition)
+				{
+					g_MotorPulses--;					
+				}
+				else
+				{
+					g_MotorPulses++;					
+				}
+
 				g_MotorPulseTimer++;
 				
 				if (g_MotorTimer == 3)
 				{
-					PINC = (1<< MotorStep);	
+					//PINC = (1<< MotorStep);	
 				}
 				
 				if (g_MotorTimer > 4)
 				{
-					PINC = (1<< MotorStep);
+					//PINC = (1<< MotorStep);
 					g_MotorTimer = 0;
 				}
+				
+				if (g_ButtonPressed)
+				{
+					g_ButtonPressed = 0;
+					ControlPowerLED(OFF);
+					ControlMotorEnable(OFF);
+					gStateMachine = STATE_IDLE;
+				}
+				PINC = (1<< MotorStep);	
+				
 			break;
 			
 			case STATE_DIMMING:
@@ -91,19 +138,6 @@ int main(void)
 			/*Should never enter this state*/
 			/*Add fault handling*/
 			break;			
-		}
-		
-		if (g_Timer0 == 100)
-		{
-			//ControlPowerLED(ON);
-			TogglePowerLED();
-			g_Timer0 = 0;
-		}
-		
-		if (g_Timer0 > 200)
-		{
-			ControlPowerLED(OFF);
-			g_Timer0 = 0;
 		}
 	}
 }
