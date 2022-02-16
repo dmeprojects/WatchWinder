@@ -59,6 +59,12 @@ External components
 #define FALSE			0
 #define OK				1
 #define ERROR			0
+
+//Timer 2 motor values
+#define HIGHTIME		125
+#define LOWTIME			125
+
+//MotorDirection
 #define FORWARD			1
 #define BACKWARD		0
 

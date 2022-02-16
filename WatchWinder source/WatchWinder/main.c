@@ -26,14 +26,16 @@ volatile unsigned int g_BlinkTimer;
 volatile unsigned int g_MotorTimer;
 volatile unsigned int g_MotorPulseTimer;
 
+volatile int g_MotorSteps;
+volatile int g_MotorPosition;
+volatile unsigned char g_MotorDirection;
+
 
 unsigned char g_State;
 unsigned char g_LedState;
 unsigned char g_PowerLEDState;
 unsigned char g_AmbientLEDState;
-volatile unsigned char g_RFState;
-int g_MotorPulses;
-int g_MotorPosition;
+
 
 int main(void)
 {
@@ -69,7 +71,7 @@ int main(void)
 				g_ButtonPressed = 0;
 				ControlPowerLED(ON);
 				ControlMotorEnable(ON);
-				g_MotorPulses = 0;
+				g_MotorSteps = 0;
 				g_MotorPosition = 1000;
 				gStateMachine++;
 			}
@@ -79,7 +81,7 @@ int main(void)
 			case STATE_ROTATE:
 			PINC = (1<< MotorStep);	
 				/*Increment motor pulses*/
-				if (g_MotorPulses == g_MotorPosition)	//Change direction
+				if (g_MotorSteps == g_MotorPosition)	//Change direction
 				{
 					ToggleMotorDirection();					
 					if (g_MotorPosition < 0)
@@ -91,29 +93,7 @@ int main(void)
 						g_MotorPosition = -1000;
 					}
 				}
-				
-				/*Check if value must be in or decremented*/
-				if (g_MotorPulses > g_MotorPosition)
-				{
-					g_MotorPulses--;					
-				}
-				else
-				{
-					g_MotorPulses++;					
-				}
 
-				g_MotorPulseTimer++;
-				
-				if (g_MotorTimer == 3)
-				{
-					//PINC = (1<< MotorStep);	
-				}
-				
-				if (g_MotorTimer > 4)
-				{
-					//PINC = (1<< MotorStep);
-					g_MotorTimer = 0;
-				}
 				
 				if (g_ButtonPressed)
 				{

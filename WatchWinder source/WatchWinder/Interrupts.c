@@ -18,6 +18,8 @@ extern volatile unsigned int g_BlinkTimer;
 
 extern volatile unsigned int g_MotorTimer;
 extern volatile unsigned int g_MotorPulseTimer;
+extern volatile unsigned char g_MotorDirection;
+extern volatile int g_MotorSteps;
 
 
 volatile unsigned char g_SyncStatus = 0;
@@ -30,6 +32,7 @@ volatile unsigned char g_DataSync = 0;
 
 volatile unsigned int g_OnTimems = 0;
 volatile unsigned int MotorTimer = 0;
+
 
 // Interrupt triggers every 1mS
 // ----------------------------
@@ -98,8 +101,26 @@ Interrupt triggers
 */
 ISR (TIMER2_COMPA_vect)
 {	
-	//Change OCR2A value
-	g_MotorTimer++;	
+	//Check OCR2A value
+	//Switch between high and low value depending on OCR2A content
+	//Increment or decrement motor steps
+	if (OCR2A == HIGHTIME)
+	{
+		OCR2A = LOWTIME;
+	}
+	else
+	{
+		OCR2A = HIGHTIME;
+	}
+	
+	if (g_MotorDirection == FORWARD)
+	{	
+		g_MotorSteps++;
+	}
+	else
+	{		
+		g_MotorSteps--;
+	}	
 }
 
 
