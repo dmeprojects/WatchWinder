@@ -72,28 +72,33 @@ int main(void)
 				ControlPowerLED(ON);
 				ControlMotorEnable(ON);
 				g_MotorSteps = 0;
-				g_MotorPosition = 1000;
+				g_MotorPosition = 500;
+				g_MotorDirection = FORWARD;
 				gStateMachine++;
+				StartTimer2(0);
 			}
 
 			break;
 			
 			case STATE_ROTATE:
-			PINC = (1<< MotorStep);	
+			//PINC = (1<< MotorStep);	
 				/*Increment motor pulses*/
 				if (g_MotorSteps == g_MotorPosition)	//Change direction
 				{
-					ToggleMotorDirection();					
-					if (g_MotorPosition < 0)
+					if (g_MotorSteps < 0)
 					{
-						g_MotorPosition = 1000;
+						g_MotorDirection = FORWARD;
+						ToggleMotorDirection();
+						g_MotorPosition = 500;
 					}
 					else
 					{
-						g_MotorPosition = -1000;
-					}
-				}
+						g_MotorDirection = BACKWARD;
+						ToggleMotorDirection();
+						g_MotorPosition = -500;
+					}				
 
+				}
 				
 				if (g_ButtonPressed)
 				{
@@ -101,8 +106,9 @@ int main(void)
 					ControlPowerLED(OFF);
 					ControlMotorEnable(OFF);
 					gStateMachine = STATE_IDLE;
+					StopTimer2();
 				}
-				PINC = (1<< MotorStep);	
+				//PINC = (1<< MotorStep);	
 				
 			break;
 			

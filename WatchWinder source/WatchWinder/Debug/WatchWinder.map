@@ -59,10 +59,6 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 Timers.o
  .text.InitTimer1
                 0x0000000000000000       0x3a Timers.o
- .text.StartTimer2
-                0x0000000000000000       0x20 Timers.o
- .text.StopTimer2
-                0x0000000000000000       0x18 Timers.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
@@ -425,32 +421,32 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1825
+.debug_info     0x0000000000000000     0x1816
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
  .debug_info    0x00000000000005f4      0x405 GPIO.o
  .debug_info    0x00000000000009f9      0x2a2 inithw.o
  .debug_info    0x0000000000000c9b      0x451 Interrupts.o
- .debug_info    0x00000000000010ec      0x42d main.o
- .debug_info    0x0000000000001519      0x30c Timers.o
+ .debug_info    0x00000000000010ec      0x41e main.o
+ .debug_info    0x000000000000150a      0x30c Timers.o
 
-.debug_abbrev   0x0000000000000000      0x7fd
+.debug_abbrev   0x0000000000000000      0x7f0
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
  .debug_abbrev  0x00000000000005a2       0xa9 GPIO.o
  .debug_abbrev  0x000000000000064b       0x5e inithw.o
  .debug_abbrev  0x00000000000006a9       0x6f Interrupts.o
- .debug_abbrev  0x0000000000000718       0x60 main.o
- .debug_abbrev  0x0000000000000778       0x85 Timers.o
+ .debug_abbrev  0x0000000000000718       0x53 main.o
+ .debug_abbrev  0x000000000000076b       0x85 Timers.o
 
-.debug_line     0x0000000000000000      0x80f
+.debug_line     0x0000000000000000      0x7ec
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x137 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
  .debug_line    0x0000000000000137      0x1c0 GPIO.o
  .debug_line    0x00000000000002f7      0x102 inithw.o
  .debug_line    0x00000000000003f9      0x156 Interrupts.o
- .debug_line    0x000000000000054f      0x16c main.o
- .debug_line    0x00000000000006bb      0x154 Timers.o
+ .debug_line    0x000000000000054f      0x149 main.o
+ .debug_line    0x0000000000000698      0x154 Timers.o
 
 .debug_frame    0x0000000000000000      0x338
  *(.debug_frame)
@@ -550,100 +546,112 @@ LOAD data_init
                 0x00000000000000c8      0x142 Interrupts.o
                 0x00000000000000c8                __vector_14
 
-.text.main      0x000000000000020a      0x12a
- .text.main     0x000000000000020a      0x12a main.o
+.text.main      0x000000000000020a      0x13a
+ .text.main     0x000000000000020a      0x13a main.o
                 0x000000000000020a                main
 
 .text.__vector_7
-                0x0000000000000334       0x8a
+                0x0000000000000344       0x8a
  .text.__vector_7
-                0x0000000000000334       0x8a Interrupts.o
-                0x0000000000000334                __vector_7
+                0x0000000000000344       0x8a Interrupts.o
+                0x0000000000000344                __vector_7
 
 .text.InitTimer2
-                0x00000000000003be       0x64
+                0x00000000000003ce       0x64
  .text.InitTimer2
-                0x00000000000003be       0x64 Timers.o
-                0x00000000000003be                InitTimer2
+                0x00000000000003ce       0x64 Timers.o
+                0x00000000000003ce                InitTimer2
 
-.text.setup     0x0000000000000422       0x56
- .text.setup    0x0000000000000422       0x56 inithw.o
-                0x0000000000000422                setup
+.text.setup     0x0000000000000432       0x56
+ .text.setup    0x0000000000000432       0x56 inithw.o
+                0x0000000000000432                setup
 
 .text.ControlPowerLED
-                0x0000000000000478       0x4c
+                0x0000000000000488       0x4c
  .text.ControlPowerLED
-                0x0000000000000478       0x4c GPIO.o
-                0x0000000000000478                ControlPowerLED
+                0x0000000000000488       0x4c GPIO.o
+                0x0000000000000488                ControlPowerLED
 
 .text.ControlAmbientLED
-                0x00000000000004c4       0x4c
+                0x00000000000004d4       0x4c
  .text.ControlAmbientLED
-                0x00000000000004c4       0x4c GPIO.o
-                0x00000000000004c4                ControlAmbientLED
+                0x00000000000004d4       0x4c GPIO.o
+                0x00000000000004d4                ControlAmbientLED
 
 .text.ControlMotorEnable
-                0x0000000000000510       0x46
+                0x0000000000000520       0x46
  .text.ControlMotorEnable
-                0x0000000000000510       0x46 GPIO.o
-                0x0000000000000510                ControlMotorEnable
+                0x0000000000000520       0x46 GPIO.o
+                0x0000000000000520                ControlMotorEnable
 
-.text.InitGPIO  0x0000000000000556       0x46
+.text.InitGPIO  0x0000000000000566       0x46
  .text.InitGPIO
-                0x0000000000000556       0x46 inithw.o
-                0x0000000000000556                InitGPIO
+                0x0000000000000566       0x46 inithw.o
+                0x0000000000000566                InitGPIO
 
 .text.InitTimer0
-                0x000000000000059c       0x3a
+                0x00000000000005ac       0x3a
  .text.InitTimer0
-                0x000000000000059c       0x3a Timers.o
-                0x000000000000059c                InitTimer0
+                0x00000000000005ac       0x3a Timers.o
+                0x00000000000005ac                InitTimer0
 
 .text.__vector_1
-                0x00000000000005d6       0x38
+                0x00000000000005e6       0x38
  .text.__vector_1
-                0x00000000000005d6       0x38 Interrupts.o
-                0x00000000000005d6                __vector_1
+                0x00000000000005e6       0x38 Interrupts.o
+                0x00000000000005e6                __vector_1
 
-.text.InitInt0  0x000000000000060e       0x2e
+.text.InitInt0  0x000000000000061e       0x2e
  .text.InitInt0
-                0x000000000000060e       0x2e inithw.o
-                0x000000000000060e                InitInt0
+                0x000000000000061e       0x2e inithw.o
+                0x000000000000061e                InitInt0
 
 .text.ToggleMotorDirection
-                0x000000000000063c       0x22
+                0x000000000000064c       0x22
  .text.ToggleMotorDirection
-                0x000000000000063c       0x22 GPIO.o
-                0x000000000000063c                ToggleMotorDirection
+                0x000000000000064c       0x22 GPIO.o
+                0x000000000000064c                ToggleMotorDirection
 
-.text           0x000000000000065e        0x4
- .text          0x000000000000065e        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
-                0x000000000000065e                __vector_22
-                0x000000000000065e                __vector_24
-                0x000000000000065e                __vector_12
-                0x000000000000065e                __bad_interrupt
-                0x000000000000065e                __vector_6
-                0x000000000000065e                __vector_3
-                0x000000000000065e                __vector_23
-                0x000000000000065e                __vector_25
-                0x000000000000065e                __vector_11
-                0x000000000000065e                __vector_13
-                0x000000000000065e                __vector_17
-                0x000000000000065e                __vector_19
-                0x000000000000065e                __vector_5
-                0x000000000000065e                __vector_4
-                0x000000000000065e                __vector_9
-                0x000000000000065e                __vector_2
-                0x000000000000065e                __vector_21
-                0x000000000000065e                __vector_15
-                0x000000000000065e                __vector_8
-                0x000000000000065e                __vector_10
-                0x000000000000065e                __vector_16
-                0x000000000000065e                __vector_18
-                0x000000000000065e                __vector_20
+.text.StartTimer2
+                0x000000000000066e       0x20
+ .text.StartTimer2
+                0x000000000000066e       0x20 Timers.o
+                0x000000000000066e                StartTimer2
+
+.text.StopTimer2
+                0x000000000000068e       0x18
+ .text.StopTimer2
+                0x000000000000068e       0x18 Timers.o
+                0x000000000000068e                StopTimer2
+
+.text           0x00000000000006a6        0x4
+ .text          0x00000000000006a6        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x00000000000006a6                __vector_22
+                0x00000000000006a6                __vector_24
+                0x00000000000006a6                __vector_12
+                0x00000000000006a6                __bad_interrupt
+                0x00000000000006a6                __vector_6
+                0x00000000000006a6                __vector_3
+                0x00000000000006a6                __vector_23
+                0x00000000000006a6                __vector_25
+                0x00000000000006a6                __vector_11
+                0x00000000000006a6                __vector_13
+                0x00000000000006a6                __vector_17
+                0x00000000000006a6                __vector_19
+                0x00000000000006a6                __vector_5
+                0x00000000000006a6                __vector_4
+                0x00000000000006a6                __vector_9
+                0x00000000000006a6                __vector_2
+                0x00000000000006a6                __vector_21
+                0x00000000000006a6                __vector_15
+                0x00000000000006a6                __vector_8
+                0x00000000000006a6                __vector_10
+                0x00000000000006a6                __vector_16
+                0x00000000000006a6                __vector_18
+                0x00000000000006a6                __vector_20
 
 .data.gStateMachine
-                0x000000000080011e        0x1 load address 0x0000000000000662
+                0x000000000080011e        0x1 load address 0x00000000000006aa
  .data.gStateMachine
                 0x000000000080011e        0x1 main.o
                 0x000000000080011e                gStateMachine

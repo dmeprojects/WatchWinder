@@ -57,7 +57,7 @@ void InitInt0()
 void InitGPIO(void)
 {
 	//Set outputs on port C
-	DDRC	=	DDRC | ((1<<MotorEnable) | (1<<MotorDirection) | (1<<MotorStep) | (1<<MotorMode1) | (1<<MotorMode2) | (1<<MotorMode2) );		
+	DDRC	=	DDRC | ((1<<MotorEnable) | (1<<MotorDirection) | (1<<MotorMode1) | (1<<MotorMode2) | (1<<MotorMode2) );		
 	//Set input on port D
 	DDRD	=	DDRD &~(1<<PowerButton);						
 	//Set outputs on port B

@@ -62,8 +62,8 @@ void InitTimer2() //Configuration as step driver for stepper motor
 	/*
 	TCCR2A in CTC mode, toggle O2CA on compare match
 	*/
-	TCCR2A	=	(0<<COM2A1) | (1<<COM2A0) | (0<<COM2B1) | (0<<COM2B0) | (0<<WGM20) | (1<<WGM21) | (0<<COM2B1);	
-	TCCR2B  =	(1<<CS20) | (0<<CS21) | (0<<CS22);		// Set timer clock source to clock/64 (8Mhz/64 = 125Khz)
+	TCCR2A	=	(0<<COM2A1) | (1<<COM2A0) | (0<<COM2B1) | (0<<COM2B0) | (0<<WGM20) | (1<<WGM21);	
+	TCCR2B  =	(0<<WGM22) | (0<<CS20) | (0<<CS21) | (1<<CS22);		// Set timer clock source to clock/64 (8Mhz/64 = 125Khz)
 	OCR2A	=	125;	//1ms interrupt
 	OCR2B	=	0;		
 	TCNT2	=	0;		
@@ -74,7 +74,7 @@ void InitTimer2() //Configuration as step driver for stepper motor
 
 void StartTimer2 (unsigned char Prescaler)
 {
-	TCCR2B  =	(1<<CS20) | (0<<CS21) | (0<<CS22);		// Set timer clock source to clock/64 (8Mhz/64 = 125Khz)	
+	TCCR2B  =	(0<<CS20) | (1<<CS21) | (1<<CS22);		// Set timer clock source to clock/64 (8Mhz/64 = 125Khz)	
 }
  
  void StopTimer2(void)
