@@ -73,17 +73,17 @@ void ControlMotorDirection (unsigned char Direction)
 
 void ToggleMotorDirection (void)
 {
-	PINC |= (1<<MotorDirection);
+	PORTC |= (1<<MotorDirection);
 }
 
 void ToggleAmbientLED (void)
 {
-	PINB |= (1<<AmbientLED);	
+	PORTB |= (1<<AmbientLED);	
 }
 
 void TogglePowerLED (void)
 {
-	PINB |= (1<<PowerLED);
+	PORTB |= (1<<PowerLED);
 }
 
 unsigned char StatusPowerButton (void)

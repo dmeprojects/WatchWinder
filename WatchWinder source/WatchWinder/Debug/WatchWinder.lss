@@ -302,10 +302,10 @@ void ToggleMotorDirection (void)
  64e:	df 93       	push	r29
  650:	cd b7       	in	r28, 0x3d	; 61
  652:	de b7       	in	r29, 0x3e	; 62
-	PINC |= (1<<MotorDirection);
- 654:	86 e2       	ldi	r24, 0x26	; 38
+	PORTC |= (1<<MotorDirection);
+ 654:	88 e2       	ldi	r24, 0x28	; 40
  656:	90 e0       	ldi	r25, 0x00	; 0
- 658:	26 e2       	ldi	r18, 0x26	; 38
+ 658:	28 e2       	ldi	r18, 0x28	; 40
  65a:	30 e0       	ldi	r19, 0x00	; 0
  65c:	f9 01       	movw	r30, r18
  65e:	20 81       	ld	r18, Z
@@ -344,7 +344,7 @@ void setup(void)
  446:	0e 94 0f 03 	call	0x61e	; 0x61e <InitInt0>
 	
 	/*Set step mode*/
-	PORTC &= ~(1 << MotorMode0) | ~(1 << MotorMode1)| ~(1 << MotorMode2);	//Full step
+	PORTC &= ~(1 << MotorMode0) | ~(1 << MotorMode1)| ~(1 << MotorMode2);	//Full step - turn of all outputs
  44a:	88 e2       	ldi	r24, 0x28	; 40
  44c:	90 e0       	ldi	r25, 0x00	; 0
  44e:	28 e2       	ldi	r18, 0x28	; 40

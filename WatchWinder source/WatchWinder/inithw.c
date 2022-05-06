@@ -27,7 +27,7 @@ void setup(void)
 	InitInt0();			// Enable falling egde interrupts
 	
 	/*Set step mode*/
-	PORTC &= ~(1 << MotorMode0) | ~(1 << MotorMode1)| ~(1 << MotorMode2);	//Full step
+	PORTC &= ~(1 << MotorMode0) | ~(1 << MotorMode1)| ~(1 << MotorMode2);	//Full step - turn of all outputs
 	//PORTC = PORTC & (1 << MotorMode0) | ~(1 << MotorMode1)| ~(1 << MotorMode2);	//1/2 step
 	//PORTC = PORTC & ~(1 << MotorMode0) | (1 << MotorMode1)| ~(1 << MotorMode2);	//1/4 step
 	
